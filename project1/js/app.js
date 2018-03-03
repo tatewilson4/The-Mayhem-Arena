@@ -23,7 +23,7 @@ $(()=>{
   }
 
   $cpuAttack = () => {
-    (player.hull - cpu.attack);
+    $player.hull = $player.hull - $cpu.attack;
   }
 
 
@@ -55,6 +55,7 @@ $(()=>{
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       // $('h2').append($battleScreen2);
+      //attack and defend buttons for cpu and player1
       $('.button3').on('click' , (event) => {
         $attack();
         console.log($cpu);
@@ -63,7 +64,8 @@ $(()=>{
         console.log('1');
       })
       $('.button5').on('click' , (event) => {
-        console.log('1');
+        $cpuAttack();
+        console.log($player);
       })
       $('.button6').on('click' , (event) => {
         console.log('1');
