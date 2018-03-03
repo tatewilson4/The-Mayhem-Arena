@@ -5,6 +5,7 @@ header {
   font-size: 80px;
   font-family: fantasy;
 }
+
 .start {
   display: flex;
   align-items: center;
@@ -17,14 +18,47 @@ header {
   margin-bottom: 10px;
   width: 50%;
 }
+
 h1 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.button {
+
+.button{
   font-size: 40px;
   border-radius: 10px;
   background: blue;
   color: white;
 }
+.button3, .button4, .button5, .button6 {
+  font-size: 20px;
+  border-radius: 10px;
+  background: blue;
+  color: white;
+  display: grid;
+  margin: 10px 0;
+}
+
+.fighter, .fighter2{
+  display: flex;
+  display: inline-block;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+.battleScreen{
+  background: red;
+  width: 50%;
+  height: 175px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+ .battleScreen2{
+   background: black;
+   width: 50%;
+   height: 175px;
+   margin-bottom: 10px;
+   display: inline-block;
+ }
