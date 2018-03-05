@@ -81,3 +81,5 @@ $(()=>{
 const $cpu = new $Cpu('Bad');
 const $player = new $Fighter('player');
 });
+
+console.log('akjsd');
