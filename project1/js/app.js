@@ -2,18 +2,20 @@
 $(()=>{
   //creat stats for fighter 1 and cpu
   class $Fighter{
-    constructor(hull, attack, defend){
+    constructor(hull, attack, defend, wins){
       this.hull = 100;
       this.attack = 50;
       this.defend = 50;
+      this.wins = 0;
     }
   }
   //creat attack
   class $Cpu {
-    constructor(hull, attack, defend){
+    constructor(hull, attack, defend, wins){
       this.hull = 100;
       this.attack = 50;
       this.defend = 50;
+      this.wins = 0;
     }
   }
 
@@ -66,6 +68,7 @@ $(()=>{
         // console.log($cpu);
         if($cpu.hull <= 0){
           alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $player.wins ++;
           $round2();
         }
       })
@@ -76,6 +79,7 @@ $(()=>{
         $cpuAttack();
         if($player.hull <= 0){
           alert('You were killed, do you want to continue to the next round?');
+          $cpu.wins ++;
           $round2();
         }
       })
@@ -90,6 +94,7 @@ $(()=>{
     $round2 = () => {
       $player.hull = 100;
       $cpu.hull = 100;
+      console.log($cpu);
       $battleScreen.remove();
       $battleScreen2.remove();
       alert('This is round 2');
@@ -102,6 +107,7 @@ $(()=>{
         console.log($cpu);
         if($cpu.hull <= 0){
           alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $player.wins ++;
           $round3();
         }
       })
@@ -112,6 +118,7 @@ $(()=>{
         $cpuAttack();
         if($player.hull <= 0){
           alert('You were killed, do you want to continue to the next round?');
+          $cpu.wins ++;
           $round3();
         }
       })
@@ -138,6 +145,7 @@ $(()=>{
         console.log($cpu);
         if($cpu.hull <= 0){
           alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $player.wins ++;
           $round4();
         }
       })
@@ -148,6 +156,7 @@ $(()=>{
         $cpuAttack();
         if($player.hull <= 0){
           alert('You were killed, do you want to continue to the next round?');
+          $cpu.wins ++;
           $round4();
         }
       })
@@ -175,6 +184,7 @@ $(()=>{
             console.log($cpu);
             if($cpu.hull <= 0){
               alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+              $player.wins ++;
               $round5();
             }
           })
@@ -185,6 +195,7 @@ $(()=>{
             $cpuAttack();
             if($player.hull <= 0){
               alert('You were killed, do you want to continue to the next round?');
+              $cpu.wins ++;
               $round5();
             }
           })
