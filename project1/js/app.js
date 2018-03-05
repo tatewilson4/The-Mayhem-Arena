@@ -42,6 +42,8 @@ $(()=>{
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
   $divStart.addClass('start');
   $('h1').append($divStart);
+  $('.image').hide();
+  $('.image2').hide();
 
 
 //remove click button
@@ -59,6 +61,8 @@ $(()=>{
       // $battleScreen2.addClass('battleScreen2');
       //added alert for round 1
       alert('This is round 1');
+      $('.image').show();
+      $('.image2').show();
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       // $('h2').append($battleScreen2);
@@ -232,7 +236,6 @@ const cpuWin = () => {
   });
 
 //creat a variable for cpu and fighter
-
 const $cpu = new $Cpu('Bad');
 const $player = new $Fighter('player');
 });

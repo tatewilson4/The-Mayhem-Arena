@@ -1,9 +1,10 @@
 header {
   text-align: center;
-  background: gold;
-  padding: 100px;
+  background: rgba(77, 0, 251, .5);
+  padding: 30px;
   font-size: 80px;
   font-family: fantasy;
+  border-radius: 10px;
 }
 
 .start {
@@ -12,8 +13,8 @@ header {
   justify-content: center;
   color: white;
   height: 175px;
-  border: 1px solid red;
-  background-color: red;
+  border: 1px solid rgba(13, 218, 255, .75);
+  background-color: rgba(13, 218, 255, .75);
   border-radius: 10px;
   margin-bottom: 10px;
   width: 50%;
@@ -28,7 +29,8 @@ h1 {
 .button{
   font-size: 40px;
   border-radius: 10px;
-  background: blue;
+  border: rgb(77, 0, 251);
+  background: rgb(77, 0, 251);
   color: white;
 }
 .button3, .button4, .button5, .button6 {
@@ -47,34 +49,38 @@ h1 {
   width: 50%;
   justify-content: center;
 }
-.battleScreen{
-  background: red;
-  width: 50%;
+.battleScreen {
+  background: none;
+  width: 40%;
   height: 175px;
   margin-bottom: 10px;
   display: inline-block;
+  border-radius: 10px;
+  float: left;
+  border: none;
+}
+.battleScreen2 {
+  background: none;
+  width: 40%;
+  height: 175px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-radius: 10px;
+  float: right;
+  border: none;
 }
 
- .battleScreen2{
-   background: black;
-   width: 50%;
-   height: 175px;
-   margin-bottom: 10px;
-   display: inline-block;
- }
+div.image{
+  display: inline-block;
+  content: url(https://www.ssbwiki.com/images/5/5f/Falco_SSB4.png);
+  height: 200px;
+  width: 200px;
+}
 
- /* .battleScreen3{
-   background: black;
-   width: 50%;
-   height: 175px;
-   margin-bottom: 10px;
-   display: inline-block;
- }
-
- .battleScreen4{
-   background: black;
-   width: 50%;
-   height: 175px;
-   margin-bottom: 10px;
-   display: inline-block;
- } */
+div.image2{
+  display: inline-block;
+  content: url(https://www.ssbwiki.com/images/6/68/Samus_Other_M_Artwork.png);
+  height: 220px;
+  width: 200px;
+  padding-left: 405px;
+}
