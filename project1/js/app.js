@@ -146,7 +146,11 @@ $(()=>{
         if($cpu.hull <= 0){
           alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
           $player.wins ++;
-          $round4();
+          if ($player.wins === 3){
+            playerWin();
+          } else {
+            $round4();
+          }
         }
       })
       $('.button4').on('click' , (event) => {
@@ -157,7 +161,11 @@ $(()=>{
         if($player.hull <= 0){
           alert('You were killed, do you want to continue to the next round?');
           $cpu.wins ++;
-          $round4();
+          if ($cpu.wins === 3){
+            cpuWin();
+          } else {
+            $round4();
+          }
         }
       })
       $('.button6').on('click' , (event) => {
@@ -185,7 +193,11 @@ $(()=>{
             if($cpu.hull <= 0){
               alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
               $player.wins ++;
-              $round5();
+              if ($player.wins === 3){
+                playerWin();
+              } else {
+                $round5();
+              }
             }
           })
           $('.button4').on('click' , (event) => {
@@ -196,7 +208,11 @@ $(()=>{
             if($player.hull <= 0){
               alert('You were killed, do you want to continue to the next round?');
               $cpu.wins ++;
-              $round5();
+              if ($cpu.wins === 3){
+                cpuWin();
+              } else {
+                $round5();
+              }
             }
           })
           $('.button6').on('click' , (event) => {
@@ -204,6 +220,13 @@ $(()=>{
           })
         }
 
+//player and cpu win scenerio
+const playerWin = () => {
+  console.log('You win');
+}
+const cpuWin = () => {
+  console.log('You loose');
+}
 
 
   });
