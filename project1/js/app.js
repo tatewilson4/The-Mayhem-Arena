@@ -74,15 +74,17 @@ $(()=>{
       })
       $('.button5').on('click' , (event) => {
         $cpuAttack();
-        // if($player.hull <= 0){
-        //   alert('You were killed, do you want to continue to the next round?');
-        //   $round2();
-        // }
+        if($player.hull <= 0){
+          alert('You were killed, do you want to continue to the next round?');
+          $round2();
+        }
       })
       $('.button6').on('click' , (event) => {
         console.log('1');
       })
     });
+
+
 
     //Round 2
     $round2 = () => {
@@ -98,8 +100,100 @@ $(()=>{
       $('.button3').on('click' , (event) => {
         $attack();
         console.log($cpu);
+        if($cpu.hull <= 0){
+          alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $round3();
+        }
+      })
+      $('.button4').on('click' , (event) => {
+        // console.log('1');
+      })
+      $('.button5').on('click' , (event) => {
+        $cpuAttack();
+        if($player.hull <= 0){
+          alert('You were killed, do you want to continue to the next round?');
+          $round3();
+        }
+      })
+      $('.button6').on('click' , (event) => {
+        console.log('1');
       })
     }
+
+
+
+//round 3
+    $round3 = () => {
+      $player.hull = 100;
+      $cpu.hull = 100;
+      $battleScreen.remove();
+      $battleScreen2.remove();
+      alert('This is round 3');
+      $battleScreen.addClass('battleScreen');
+      $battleScreen2.addClass('battleScreen2');
+      $('h3').append($battleScreen);
+      $('h3').append($battleScreen2);
+      $('.button3').on('click' , (event) => {
+        $attack();
+        console.log($cpu);
+        if($cpu.hull <= 0){
+          alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $round4();
+        }
+      })
+      $('.button4').on('click' , (event) => {
+        // console.log('1');
+      })
+      $('.button5').on('click' , (event) => {
+        $cpuAttack();
+        if($player.hull <= 0){
+          alert('You were killed, do you want to continue to the next round?');
+          $round4();
+        }
+      })
+      $('.button6').on('click' , (event) => {
+        console.log('1');
+      })
+    }
+
+
+
+
+    //round 4
+        $round4 = () => {
+          $player.hull = 100;
+          $cpu.hull = 100;
+          $battleScreen.remove();
+          $battleScreen2.remove();
+          alert('This is round 4');
+          $battleScreen.addClass('battleScreen');
+          $battleScreen2.addClass('battleScreen2');
+          $('h3').append($battleScreen);
+          $('h3').append($battleScreen2);
+          $('.button3').on('click' , (event) => {
+            $attack();
+            console.log($cpu);
+            if($cpu.hull <= 0){
+              alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+              $round5();
+            }
+          })
+          $('.button4').on('click' , (event) => {
+            // console.log('1');
+          })
+          $('.button5').on('click' , (event) => {
+            $cpuAttack();
+            if($player.hull <= 0){
+              alert('You were killed, do you want to continue to the next round?');
+              $round5();
+            }
+          })
+          $('.button6').on('click' , (event) => {
+            console.log('1');
+          })
+        }
+
+
 
   });
 
