@@ -84,9 +84,16 @@ div.image2{
   width: 200px;
   padding-left: 405px;
 }
-div.stats , div.stats2 {
+div.stats {
   display: inline-block;
   height: 80px;
   width: 40%;
-  background: white;
+  float: left;
+}
+
+div.stats2 {
+  display: inline-block;
+  height: 80px;
+  width: 40%;
+  float: right;
 }

@@ -73,6 +73,7 @@ $(()=>{
       //attack and defend buttons for cpu and player1
       $('.button3').on('click' , (event) => {
         $attack();
+        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend);
         // console.log($cpu);
         if($cpu.hull <= 0){
           alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
@@ -85,6 +86,7 @@ $(()=>{
       })
       $('.button5').on('click' , (event) => {
         $cpuAttack();
+        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend);
         if($player.hull <= 0){
           alert('You were killed, do you want to continue to the next round?');
           $cpu.wins ++;
