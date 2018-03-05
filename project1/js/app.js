@@ -44,6 +44,8 @@ $(()=>{
   $('h1').append($divStart);
   $('.image').hide();
   $('.image2').hide();
+  $('.stats').hide();
+  $('.stats2').hide();
 
 
 //remove click button
@@ -63,6 +65,8 @@ $(()=>{
       alert('This is round 1');
       $('.image').show();
       $('.image2').show();
+      $('.stats').show().html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend);
+      $('.stats2').show().html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend);
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       // $('h2').append($battleScreen2);
