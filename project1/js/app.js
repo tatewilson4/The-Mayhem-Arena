@@ -34,6 +34,7 @@ $(()=>{
   let $divStart = $('<div><button class="button">START</button></div>');
   //create fighter 1 and 2
   let $fighter = $('<div><button class="button2">CHOOSE</button></div>');
+  let $fighter2 = $('<div><button class="button7">CHOOSE</button></div>');
   // let $fighter2 = $('<div><button class="button3">CHOOSE</button></div>');
   //create fighter 1 and 2 fight board
   let $battleScreen = $('<div><button class="button3">ATTACK</button><button class="button4">DEFEND</button></div>');
@@ -44,27 +45,54 @@ $(()=>{
   $('h1').append($divStart);
   $('.image').hide();
   $('.image2').hide();
+  $('.name').hide();
+  $('.name2').hide();
   $('.stats').hide();
   $('.stats2').hide();
 
 
 //remove click button
 //add choose fighter buttons
+
+
   $('.button').on('click' , (event) => {
     $(event.target).parent().remove();
-    $fighter.addClass('fighter');
+    $('.name').show().text('ZANGIEF // POWER');
+    $('.name2').show().text('AKUMA // SPEED');
+    $('h2').append($fighter2)
     $('h2').append($fighter);
+    $('.name').show();
+    $('.name2').show();
+    $('.image').show();
+    $('.image2').show();
     // $fighter2.addClass('fighter2')
     // $('h2').append($fighter2);
-    $('.button2').on('click' , (event) => {
-      $(event.currentTarget).parent().remove();
+$('.button2').on('click' , (event) => {
+  $round();
+})
+$('.button7').on('click' , (event) => {
+  $round();
+})
+
+
+
+
+
+
+
+
+    $round = () => {
+      $($fighter).remove();
+      $($fighter2).remove();
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
       // $battleScreen2.addClass('battleScreen2');
       //added alert for round 1
       alert('This is round 1');
-      $('.image').show();
-      $('.image2').show();
+      // $('.image').show();
+      // $('.image2').show();
+      $('.name').hide();
+      $('.name2').hide();
       $('.stats').show().html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend);
       $('.stats2').show().html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend);
       $('h3').append($battleScreen);
@@ -96,7 +124,7 @@ $(()=>{
       $('.button6').on('click' , (event) => {
         console.log('1');
       })
-    });
+    };
 
 
 
@@ -238,8 +266,24 @@ const cpuWin = () => {
   console.log('You loose');
 }
 
+});
 
-  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //creat a variable for cpu and fighter
 const $cpu = new $Cpu('Bad');
