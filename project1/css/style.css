@@ -59,13 +59,30 @@ h1 {
   margin: 10px 0;
 }
 
-.button3, .button4, .button5, .button6 {
+.button3, .button4{
   font-size: 20px;
   border-radius: 10px;
   background: blue;
   color: white;
   display: grid;
   margin: 10px 0;
+  display: flex;
+  position: relative;
+  bottom: -95px;
+  right:134px;
+}
+
+.button5, .button6 {
+  font-size: 20px;
+  border-radius: 10px;
+  background: blue;
+  color: white;
+  display: grid;
+  margin: 10px 0;
+  display: flex;
+  position: relative;
+  bottom: 90px;
+  left:134px;
 }
 
 .battleScreen {
@@ -95,6 +112,9 @@ div.image{
   height: 200px;
   width: 152px;
   margin: auto;
+  float: left;
+  padding-left: 140px;
+  padding-top: 25px;
 }
 
 div.image2{
@@ -102,21 +122,31 @@ div.image2{
   content: url(/Users/tatewilson/Documents/homework/akuma2.gif);
   height: 220px;
   width: 152px;
-  padding-left: 405px;
+  padding-right: 148px;
   margin: auto;
+  float: right;
+  top: 200px;
 }
-div.stats {
+.stats {
+  color: white;
+  display: flex;
+  position: relative;
   display: inline-block;
   height: 80px;
   width: 40%;
-  float: left;
+  bottom: -220px;
+  right: -453px;
 }
 
-div.stats2 {
+.stats2{
+  color: white;
+  display: flex;
+  position: relative;
   display: inline-block;
   height: 80px;
   width: 40%;
-  float: right;
+  bottom: -140px;
+  left: -120px;
 }
 
 div.name{
@@ -124,10 +154,11 @@ div.name{
   height: 40px;
   width 40%;
   float: left;
-  background: white;
   position: relative;
   top: -115px;
-  left: 130px;
+  left: -220px;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 div.name2{
@@ -135,10 +166,12 @@ div.name2{
   height: 40px;
   width 40%;
   float: right;
-  background: white;
   position: relative;
-  top: -115px;
-  right: 165px;
+  right: 113px;
+  font-weight: bold;
+  font-size: 30px;
+  top: -155px;
+  right: -183px;
 }
 
 #container {
