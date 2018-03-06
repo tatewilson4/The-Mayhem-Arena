@@ -39,6 +39,10 @@ $(()=>{
   //create fighter 1 and 2 fight board
   let $battleScreen = $('<div><button class="button3">ATTACK</button><button class="button4">DEFEND</button></div>');
   let $battleScreen2 = $('<div><button class="button5">ATTACK</button><button class="button6">DEFEND</button></div>');
+  let $message = $('<div>');
+  let $message2 = $('<div>');
+  let $message3 = $('<div>');
+  let $message4 = $('<div>');
   // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
   $divStart.addClass('start');
@@ -86,9 +90,11 @@ $('.button7').on('click' , (event) => {
       $($fighter2).remove();
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
+      $message.addClass('message').text('ROUND 1');
+      $('h1').append($message);
+      $('.message').delay(2000).fadeOut();
       // $battleScreen2.addClass('battleScreen2');
       //added alert for round 1
-      alert('This is round 1');
       // $('.image').show();
       // $('.image2').show();
       $('.name').hide();
@@ -135,9 +141,11 @@ $('.button7').on('click' , (event) => {
       console.log($cpu);
       $battleScreen.remove();
       $battleScreen2.remove();
-      alert('This is round 2');
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
+      $message2.addClass('message2').text('ROUND 2');
+      $('h1').append($message2);
+      $('.message2').delay(2000).fadeOut();
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       $('.button3').on('click' , (event) => {
@@ -173,9 +181,11 @@ $('.button7').on('click' , (event) => {
       $cpu.hull = 100;
       $battleScreen.remove();
       $battleScreen2.remove();
-      alert('This is round 3');
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
+      $message3.addClass('message3').text('ROUND 3');
+      $('h1').append($message3);
+      $('.message3').delay(2000).fadeOut();
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       $('.button3').on('click' , (event) => {
@@ -220,9 +230,11 @@ $('.button7').on('click' , (event) => {
           $cpu.hull = 100;
           $battleScreen.remove();
           $battleScreen2.remove();
-          alert('This is round 4');
           $battleScreen.addClass('battleScreen');
           $battleScreen2.addClass('battleScreen2');
+          $message4.addClass('message4').text('ROUND 4');
+          $('h1').append($message4);
+          $('.message4').delay(2000).fadeOut();
           $('h3').append($battleScreen);
           $('h3').append($battleScreen2);
           $('.button3').on('click' , (event) => {

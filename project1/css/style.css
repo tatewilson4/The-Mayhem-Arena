@@ -177,3 +177,14 @@ div.name2{
 #container {
   margin: auto;
 }
+/* @font-face {
+    font-family: myFirstFont;
+    src: url('/Users/tatewilson/Documents/newfont.zip');
+} */
+
+.message, .message2, .message3, .message4 {
+    font-family: "Permanent Marker";
+    font-size: 75px;
+    position: absolute;
+    z-index: 1;
+}
