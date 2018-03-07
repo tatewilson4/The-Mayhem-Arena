@@ -45,6 +45,8 @@ $(()=>{
   let $message4 = $('<div>');
   let $message5 = $('<div>');
   let $message6 = $('<div>');
+  let $message7 = $('<div>');
+  let $message8 = $('<div>');
   // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
   $divStart.addClass('start');
@@ -96,7 +98,6 @@ $('.button7').on('click' , (event) => {
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
       $message5.addClass('message5').text('K.O');
-      $message6.addClass('message6');
       $message.addClass('message').text('ROUND 1');
       $('h2').append($message);
       $('.message').delay(2000).fadeOut();
@@ -117,7 +118,8 @@ $('.button7').on('click' , (event) => {
         $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
         // console.log($cpu);
         if($cpu.hull <= 0){
-          alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $('h2').append($message5);
+          $('.message5').delay(2000).fadeOut();
           $player.wins ++;
           $round2();
         }
@@ -129,7 +131,8 @@ $('.button7').on('click' , (event) => {
         $cpuAttack();
         $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
         if($player.hull <= 0){
-          alert('You were killed, do you want to continue to the next round?');
+          $('h2').append($message5);
+          $('.message5').delay(2000).fadeOut();
           $cpu.wins ++;
           $round2();
         }
@@ -150,6 +153,7 @@ $('.button7').on('click' , (event) => {
       $battleScreen2.remove();
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
+      $message6.addClass('message6').text('K.O');
       $message2.addClass('message2').text('ROUND 2');
       $('h2').append($message2);
       $('.message2').delay(2000).fadeOut();
@@ -159,7 +163,8 @@ $('.button7').on('click' , (event) => {
         $attack();
         console.log($cpu);
         if($cpu.hull <= 0){
-          alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $('h2').append($message6);
+          $('.message6').delay(2000).fadeOut();
           $player.wins ++;
           $round3();
         }
@@ -170,7 +175,8 @@ $('.button7').on('click' , (event) => {
       $('.button5').on('click' , (event) => {
         $cpuAttack();
         if($player.hull <= 0){
-          alert('You were killed, do you want to continue to the next round?');
+          $('h2').append($message6);
+          $('.message6').delay(2000).fadeOut();
           $cpu.wins ++;
           $round3();
         }
@@ -190,6 +196,7 @@ $('.button7').on('click' , (event) => {
       $battleScreen2.remove();
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
+      $message7.addClass('message7').text('K.O');
       $message3.addClass('message3').text('ROUND 3');
       $('h2').append($message3);
       $('.message3').delay(2000).fadeOut();
@@ -199,7 +206,8 @@ $('.button7').on('click' , (event) => {
         $attack();
         console.log($cpu);
         if($cpu.hull <= 0){
-          alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+          $('h2').append($message7);
+          $('.message7').delay(2000).fadeOut();
           $player.wins ++;
           if ($player.wins === 3){
             playerWin();
@@ -214,7 +222,8 @@ $('.button7').on('click' , (event) => {
       $('.button5').on('click' , (event) => {
         $cpuAttack();
         if($player.hull <= 0){
-          alert('You were killed, do you want to continue to the next round?');
+          $('h2').append($message7);
+          $('.message7').delay(2000).fadeOut();
           $cpu.wins ++;
           if ($cpu.wins === 3){
             cpuWin();
@@ -239,6 +248,7 @@ $('.button7').on('click' , (event) => {
           $battleScreen2.remove();
           $battleScreen.addClass('battleScreen');
           $battleScreen2.addClass('battleScreen2');
+          $message8.addClass('message8').text('K.O');
           $message4.addClass('message4').text('ROUND 4');
           $('h2').append($message4);
           $('.message4').delay(2000).fadeOut();
@@ -248,7 +258,8 @@ $('.button7').on('click' , (event) => {
             $attack();
             console.log($cpu);
             if($cpu.hull <= 0){
-              alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
+              $('h2').append($message8);
+              $('.message8').delay(2000).fadeOut();
               $player.wins ++;
               if ($player.wins === 3){
                 playerWin();
@@ -263,7 +274,8 @@ $('.button7').on('click' , (event) => {
           $('.button5').on('click' , (event) => {
             $cpuAttack();
             if($player.hull <= 0){
-              alert('You were killed, do you want to continue to the next round?');
+              $('h2').append($message8);
+              $('.message8').delay(2000).fadeOut();
               $cpu.wins ++;
               if ($cpu.wins === 3){
                 cpuWin();
