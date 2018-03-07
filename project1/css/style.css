@@ -112,7 +112,7 @@ h1 {
   border: none;
 }
 
-div.image{
+/* div.image{
   display: inline-block;
   content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/zangief.gif);
   height: 200px;
@@ -121,7 +121,7 @@ div.image{
   float: left;
   padding-left: 140px;
   padding-top: 25px;
-}
+} */
 
 div.image2{
   display: inline-block;
