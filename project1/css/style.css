@@ -126,8 +126,8 @@ h1 {
 div.image2{
   display: inline-block;
   /* content: url(http://www.fightersgeneration.com/np5/char/ssf2hd/akuma-hdstance.gif); */
-  height: 220px;
-  width: 152px;
+  /* height: 220px;
+  width: 152px; */
   padding-right: 148px;
   margin: auto;
   float: right;
