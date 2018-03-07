@@ -112,16 +112,16 @@ h1 {
   border: none;
 }
 
-/* div.image{
+.image4{
   display: inline-block;
-  content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/zangief.gif);
+  /* content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/zangief.gif);
   height: 200px;
-  width: 152px;
+  width: 152px; */
   margin: auto;
   float: left;
   padding-left: 140px;
   padding-top: 25px;
-} */
+}
 
 .image3{
   display: inline-block;
