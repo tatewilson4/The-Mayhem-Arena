@@ -65,7 +65,7 @@ h1 {
   margin: 10px 0;
 }
 
-.button3, .button4{
+.button3, .button4, .button10{
   font-size: 20px;
   border-radius: 10px;
   background: blue;
@@ -78,7 +78,7 @@ h1 {
   right:134px;
 }
 
-.button5, .button6 {
+.button5, .button6, .button11 {
   font-size: 20px;
   border-radius: 10px;
   background: blue;
