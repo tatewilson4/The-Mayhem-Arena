@@ -49,12 +49,16 @@ $(()=>{
   let $message8 = $('<div>');
   let $message9 = $('<div>');
   let $message10 = $('<div>');
+  let $message11 = $('<div>');
+  let $message12 = $('<div>');
   // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
   $divStart.addClass('start');
   $message9.addClass('message9').text('You chose Zangeif');
   $message10.addClass('message10').text('You chose Akuma');
   $instructions.addClass('instructions').text('Welcome to the Mayhem Arena. This is a two player game and you can choose which character you prefer. You have the option to attack or defend. This game is best out of three and will go 4 rounds. If no one has won after 4 rounds, there will be a bonus sudden death 5th round. Good Luck!');
+  //added navigation to start
+$start = () => {
   $('h1').append($instructions);
   $('h1').append($divStart);
   $('.image').hide();
@@ -298,6 +302,62 @@ $('.button7').on('click' , (event) => {
           })
         }
 
+
+
+
+
+        $round5 = () => {
+          $player.hull = 100;
+          $cpu.hull = 100;
+          $battleScreen.remove();
+          $battleScreen2.remove();
+          $battleScreen.addClass('battleScreen');
+          $battleScreen2.addClass('battleScreen2');
+          $message11.addClass('message11').text('K.O');
+          $message12.addClass('message12').text('SUDDEN DEATH');
+          $('h2').append($message12);
+          $('.message12').delay(2000).fadeOut();
+          $('h3').append($battleScreen);
+          $('h3').append($battleScreen2);
+          $('.button3').on('click' , (event) => {
+            $attack();
+            console.log($cpu);
+            if($cpu.hull <= 0){
+              $('h2').append($message11);
+              $('.message11').delay(2000).fadeOut();
+              $player.wins ++;
+              if ($player.wins === 3){
+                playerWin();
+              } else {
+                $round5();
+              }
+            }
+          })
+          $('.button4').on('click' , (event) => {
+            // console.log('1');
+          })
+          $('.button5').on('click' , (event) => {
+            $cpuAttack();
+            if($player.hull <= 0){
+              $('h2').append($message11);
+              $('.message11').delay(2000).fadeOut();
+              $cpu.wins ++;
+              if ($cpu.wins === 3){
+                cpuWin();
+              } else {
+                $round5();
+              }
+            }
+          })
+          $('.button6').on('click' , (event) => {
+            console.log('1');
+          })
+        }
+
+
+
+
+
 //player and cpu win scenerio
 const playerWin = () => {
   console.log('You win');
@@ -307,7 +367,7 @@ const cpuWin = () => {
 }
 
 });
-
+}
 
 
 
@@ -326,6 +386,7 @@ const cpuWin = () => {
 
 
 //creat a variable for cpu and fighter
+$start();
 const $cpu = new $Cpu('Bad');
 const $player = new $Fighter('player');
 });
