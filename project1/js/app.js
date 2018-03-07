@@ -38,6 +38,12 @@ $(()=>{
       $player.hull = $player.hull - 50;
       }
   }
+  $revive = () => {
+    $player.hull = $player.hull + 50;
+  }
+  $revive2 = () => {
+    $cpu.hull = $cpu.hull + 50;
+  }
 
 
 
@@ -52,8 +58,8 @@ $(()=>{
   let $fighter2 = $('<div><button class="button7">CHOOSE</button></div>');
   // let $fighter2 = $('<div><button class="button3">CHOOSE</button></div>');
   //create fighter 1 and 2 fight board
-  let $battleScreen = $('<div><button class="button3">ATTACK</button><button class="button4">DEFEND</button><button class="button10">CRITICAL HIT</button></div>');
-  let $battleScreen2 = $('<div><button class="button5">ATTACK</button><button class="button6">DEFEND</button><button class="button11">CRITICAL HIT</button></div>');
+  let $battleScreen = $('<div><button class="button3">ATTACK</button><button class="button4">REVIVE POTION</button><button class="button10">CRITICAL HIT</button></div>');
+  let $battleScreen2 = $('<div><button class="button5">ATTACK</button><button class="button6">REVIVE POTION</button><button class="button11">CRITICAL HIT</button></div>');
   let $suddenDeath = $('<div><button class="button8">CONTINUE</button><button class="button9">GIVE UP</button></div>');
   let $message = $('<div>');
   let $message2 = $('<div>');
@@ -154,7 +160,8 @@ $('.button7').on('click' , (event) => {
         }
       })
       $('.button6').on('click' , (event) => {
-        // console.log('1');
+        $revive();
+        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
       })
       $('.button3').on('click' , (event) => {
         $cpuAttack();
@@ -167,7 +174,8 @@ $('.button7').on('click' , (event) => {
         }
       })
       $('.button4').on('click' , (event) => {
-        console.log('1');
+        $revive2();
+        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
       })
       $('.button10').on('click' , (event) => {
         $attack3();
@@ -222,7 +230,8 @@ $('.button7').on('click' , (event) => {
         }
       })
       $('.button6').on('click' , (event) => {
-        // console.log('1');
+        $revive();
+        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
       })
       $('.button3').on('click' , (event) => {
         $cpuAttack();
@@ -235,7 +244,8 @@ $('.button7').on('click' , (event) => {
         }
       })
       $('.button4').on('click' , (event) => {
-        console.log('1');
+        $revive2();
+        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
       })
       $('.button10').on('click' , (event) => {
         $attack3();
@@ -293,7 +303,8 @@ $('.button7').on('click' , (event) => {
         }
       })
       $('.button6').on('click' , (event) => {
-        // console.log('1');
+        $revive();
+        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
       })
       $('.button3').on('click' , (event) => {
         $cpuAttack();
@@ -310,7 +321,8 @@ $('.button7').on('click' , (event) => {
         }
       })
       $('.button4').on('click' , (event) => {
-        console.log('1');
+        $revive2();
+        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
       })
       $('.button10').on('click' , (event) => {
         $attack3();
@@ -389,7 +401,8 @@ $('.button7').on('click' , (event) => {
 
           })
           $('.button6').on('click' , (event) => {
-            // console.log('1');
+            $revive();
+            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
           })
           $('.button3').on('click' , (event) => {
             $cpuAttack();
@@ -411,7 +424,8 @@ $('.button7').on('click' , (event) => {
             }
           })
           $('.button4').on('click' , (event) => {
-            console.log('1');
+            $revive2();
+            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
           })
           $('.button10').on('click' , (event) => {
             $attack3();
@@ -493,7 +507,8 @@ $('.button7').on('click' , (event) => {
             // }
           })
           $('.button6').on('click' , (event) => {
-            // console.log('1');
+            $revive();
+            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
           })
           $('.button3').on('click' , (event) => {
             $cpuAttack();
@@ -510,7 +525,8 @@ $('.button7').on('click' , (event) => {
             }
           })
           $('.button4').on('click' , (event) => {
-            console.log('1');
+            $revive2();
+            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
           })
           $('.button10').on('click' , (event) => {
             $attack3();
