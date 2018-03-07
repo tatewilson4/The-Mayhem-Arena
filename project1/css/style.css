@@ -123,16 +123,16 @@ h1 {
   padding-top: 25px;
 } */
 
-div.image2{
+/* div.image2{
   display: inline-block;
-  /* content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/akuma.gif); */
+  content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/akuma.gif);
   height: 220px;
   width: 152px;
   padding-right: 148px;
   margin: auto;
   float: right;
   top: 200px;
-}
+} */
 .stats {
   color: white;
   display: flex;
