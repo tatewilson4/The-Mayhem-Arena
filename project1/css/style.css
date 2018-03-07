@@ -7,10 +7,7 @@ header {
   border-radius: 10px;
 }
 
-.start {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* .start {
   color: white;
   height: 175px;
   border: 1px solid rgba(13, 218, 255, .75);
@@ -18,12 +15,22 @@ header {
   border-radius: 10px;
   margin-bottom: 10px;
   width: 50%;
-}
+} */
 
 h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  text-align: center;
+}
+
+.instructions{
+  border: 1px solid rgba(13, 218, 255, .75);
+  background-color: rgba(13, 218, 255, .75);
+  border-radius: 10px;
+  font-size: 25px;
+  margin: 10px;
+  width: 75%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .button {
@@ -32,8 +39,7 @@ h1 {
   border: rgb(77, 0, 251);
   background: rgb(77, 0, 251);
   color: white;
-  float: left;
-
+  text-align: center;
 }
 
 .button2 {

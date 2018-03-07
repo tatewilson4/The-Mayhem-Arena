@@ -29,9 +29,9 @@ $(()=>{
   }
 
 
-
   //Create a clickable start button
   let $divStart = $('<div><button class="button">START</button></div>');
+  let $instructions = $('<div>')
   //create fighter 1 and 2
   let $fighter = $('<div><button class="button2">CHOOSE</button></div>');
   let $fighter2 = $('<div><button class="button7">CHOOSE</button></div>');
@@ -43,9 +43,13 @@ $(()=>{
   let $message2 = $('<div>');
   let $message3 = $('<div>');
   let $message4 = $('<div>');
+  let $message5 = $('<div>');
+  let $message6 = $('<div>');
   // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
   $divStart.addClass('start');
+  $instructions.addClass('instructions').text('Welcome to the Mayhem Arena. This is a two player game and you can choose which character you prefer. You have the option to attack or defend. This game is best out of three and will go 4 rounds. If no one has won after 4 rounds, there will be a bonus sudden death 5th round. Good Luck!');
+  $('h1').append($instructions);
   $('h1').append($divStart);
   $('.image').hide();
   $('.image2').hide();
@@ -61,6 +65,7 @@ $(()=>{
 
   $('.button').on('click' , (event) => {
     $(event.target).parent().remove();
+    $('h1').remove();
     $('.name').show().text('ZANGIEF // POWER');
     $('.name2').show().text('AKUMA // SPEED');
     $('h2').append($fighter2)
@@ -90,8 +95,10 @@ $('.button7').on('click' , (event) => {
       $($fighter2).remove();
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
+      $message5.addClass('message5').text('K.O');
+      $message6.addClass('message6');
       $message.addClass('message').text('ROUND 1');
-      $('h1').append($message);
+      $('h2').append($message);
       $('.message').delay(2000).fadeOut();
       // $battleScreen2.addClass('battleScreen2');
       //added alert for round 1
@@ -99,15 +106,15 @@ $('.button7').on('click' , (event) => {
       // $('.image2').show();
       $('.name').hide();
       $('.name2').hide();
-      $('.stats').show().html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend);
-      $('.stats2').show().html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend);
+      $('.stats').show().html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+      $('.stats2').show().html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       // $('h2').append($battleScreen2);
       //attack and defend buttons for cpu and player1
       $('.button3').on('click' , (event) => {
         $attack();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend);
+        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
         // console.log($cpu);
         if($cpu.hull <= 0){
           alert('You killed cpu, do you want to continue to the next round?' , 'Yes/No');
@@ -120,7 +127,7 @@ $('.button7').on('click' , (event) => {
       })
       $('.button5').on('click' , (event) => {
         $cpuAttack();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend);
+        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
         if($player.hull <= 0){
           alert('You were killed, do you want to continue to the next round?');
           $cpu.wins ++;
@@ -144,7 +151,7 @@ $('.button7').on('click' , (event) => {
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
       $message2.addClass('message2').text('ROUND 2');
-      $('h1').append($message2);
+      $('h2').append($message2);
       $('.message2').delay(2000).fadeOut();
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
@@ -184,7 +191,7 @@ $('.button7').on('click' , (event) => {
       $battleScreen.addClass('battleScreen');
       $battleScreen2.addClass('battleScreen2');
       $message3.addClass('message3').text('ROUND 3');
-      $('h1').append($message3);
+      $('h2').append($message3);
       $('.message3').delay(2000).fadeOut();
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
@@ -233,7 +240,7 @@ $('.button7').on('click' , (event) => {
           $battleScreen.addClass('battleScreen');
           $battleScreen2.addClass('battleScreen2');
           $message4.addClass('message4').text('ROUND 4');
-          $('h1').append($message4);
+          $('h2').append($message4);
           $('.message4').delay(2000).fadeOut();
           $('h3').append($battleScreen);
           $('h3').append($battleScreen2);
