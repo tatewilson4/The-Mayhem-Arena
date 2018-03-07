@@ -47,9 +47,13 @@ $(()=>{
   let $message6 = $('<div>');
   let $message7 = $('<div>');
   let $message8 = $('<div>');
+  let $message9 = $('<div>');
+  let $message10 = $('<div>');
   // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
   $divStart.addClass('start');
+  $message9.addClass('message9').text('You chose Zangeif');
+  $message10.addClass('message10').text('You chose Akuma');
   $instructions.addClass('instructions').text('Welcome to the Mayhem Arena. This is a two player game and you can choose which character you prefer. You have the option to attack or defend. This game is best out of three and will go 4 rounds. If no one has won after 4 rounds, there will be a bonus sudden death 5th round. Good Luck!');
   $('h1').append($instructions);
   $('h1').append($divStart);
@@ -78,10 +82,15 @@ $(()=>{
     $('.image2').show();
     // $fighter2.addClass('fighter2')
     // $('h2').append($fighter2);
+
 $('.button2').on('click' , (event) => {
+  $('h2').append($message9);
+  $('.message9').delay(2000).fadeOut();
   $round();
 })
 $('.button7').on('click' , (event) => {
+  $('h2').append($message10);
+  $('.message10').delay(2000).fadeOut();
   $round();
 })
 
