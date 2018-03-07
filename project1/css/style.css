@@ -123,16 +123,16 @@ h1 {
   padding-top: 25px;
 } */
 
-/* div.image2{
+div.image2{
   display: inline-block;
-  content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/akuma.gif);
+  content: url(https://orig00.deviantart.net/409e/f/2012/092/0/2/akuma_third_strike_hd_by_steamboy33-d4ut728.gif);
   height: 220px;
   width: 152px;
   padding-right: 148px;
   margin: auto;
   float: right;
   top: 200px;
-} */
+}
 .stats {
   color: white;
   display: flex;
