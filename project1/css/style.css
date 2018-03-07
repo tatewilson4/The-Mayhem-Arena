@@ -33,7 +33,7 @@ h1 {
   margin-right:auto;
 }
 
-.button {
+.button, .button8, .button9{
   font-size: 40px;
   border-radius: 10px;
   border: rgb(77, 0, 251);

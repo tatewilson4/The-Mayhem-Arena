@@ -39,6 +39,7 @@ $(()=>{
   //create fighter 1 and 2 fight board
   let $battleScreen = $('<div><button class="button3">ATTACK</button><button class="button4">DEFEND</button></div>');
   let $battleScreen2 = $('<div><button class="button5">ATTACK</button><button class="button6">DEFEND</button></div>');
+  let $suddenDeath = $('<div><button class="button8">CONTINUE</button><button class="button9">GIVE UP</button></div>');
   let $message = $('<div>');
   let $message2 = $('<div>');
   let $message3 = $('<div>');
@@ -273,12 +274,19 @@ $('.button7').on('click' , (event) => {
             if($cpu.hull <= 0){
               $('h2').append($message8);
               $('.message8').delay(2000).fadeOut();
+              $suddenDeath.addClass('suddenDeath');
+              $('h2').append($suddenDeath);
+              $('.button8').on('click' , (event) => {
+              $cpu.wins ++;
+              $suddenDeath.remove();
+              $('.message8').delay(2000).fadeOut();
               $player.wins ++;
               if ($player.wins === 3){
                 playerWin();
               } else {
                 $round5();
               }
+            })
             }
           })
           $('.button4').on('click' , (event) => {
@@ -289,12 +297,17 @@ $('.button7').on('click' , (event) => {
             if($player.hull <= 0){
               $('h2').append($message8);
               $('.message8').delay(2000).fadeOut();
+              $suddenDeath.addClass('suddenDeath');
+              $('h2').append($suddenDeath);
+              $('.button8').on('click' , (event) => {
               $cpu.wins ++;
+              $suddenDeath.remove();
               if ($cpu.wins === 3){
                 cpuWin();
               } else {
                 $round5();
               }
+            })
             }
           })
           $('.button6').on('click' , (event) => {
@@ -323,6 +336,8 @@ $('.button7').on('click' , (event) => {
             $attack();
             console.log($cpu);
             if($cpu.hull <= 0){
+              $suddenDeath.addClass('sudddenDeath');
+              $('h2').append($suddenDeath);
               $('h2').append($message11);
               $('.message11').delay(2000).fadeOut();
               $player.wins ++;
