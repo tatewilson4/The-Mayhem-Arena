@@ -114,7 +114,7 @@ h1 {
 
 div.image{
   display: inline-block;
-  content: url(/Users/tatewilson/Documents/homework/Zangief.gif);
+  content: url(/Users/tatewilson/Documents/homework/zangief.gif);
   height: 200px;
   width: 152px;
   margin: auto;
@@ -125,7 +125,7 @@ div.image{
 
 div.image2{
   display: inline-block;
-  content: url(https://github.com/tatewilson4/tatewilson4.github.io/project1/URL.md/Akuma3.gif);
+  content: url(/Users/tatewilson/Documents/homework/akuma.gif);
   height: 220px;
   width: 152px;
   padding-right: 148px;
