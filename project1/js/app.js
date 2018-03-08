@@ -96,7 +96,7 @@ $(()=>{
   $divStart.addClass('start');
   $message9.addClass('message9').text('You chose Zangeif');
   $message10.addClass('message10').text('You chose Akuma');
-  $instructions.addClass('instructions').text('Welcome to the Mayhem Arena. This is a two player game and you can choose which character you prefer. You have the option to attack or defend. This game is best out of three and will go 4 rounds. If no one has won after 4 rounds, there will be a bonus sudden death 5th round. Good Luck!');
+  $instructions.addClass('instructions').text('Welcome to the Mayhem Arena. This is a two player game and you can choose between two different characters. You have an attack button which is garunteed to hit the opponent. You also have a critical hit option which delivers a more powerful blow. The critical hit only has a 30% chance of landing on your opponent but it has 40 damage. The last option that you have is a revive potion. This will restore your health by 30 points of it\'s original 100. If you win the round, you have the option to upgrade you attack by 10, but you do forfeit your turn. If you pass, you still go first.');
   //added navigation to start
   $('h1').append($instructions);
   $('h1').append($divStart);
@@ -160,15 +160,15 @@ $('.button7').on('click' , (event) => {
       // $('.image2').show();
       $('.name').hide();
       $('.name2').hide();
-      $('.stats').show().html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
-      $('.stats2').show().html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+      $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
+      $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
       // $('h2').append($battleScreen2);
       //attack and defend buttons for cpu and player1
       $('.button5').on('click' , (event) => {
         $attack();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
         // console.log($cpu);
         if($cpu.hull <= 0){
           $upgrade2.addClass('upgrade2');
@@ -189,11 +189,11 @@ $('.button7').on('click' , (event) => {
       })
       $('.button6').on('click' , (event) => {
         $revive();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
       })
       $('.button3').on('click' , (event) => {
         $cpuAttack();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
         if($player.hull <= 0){
           $upgrade.addClass('upgrade');
           $('h2').append($upgrade);
@@ -213,11 +213,11 @@ $('.button7').on('click' , (event) => {
     })
       $('.button4').on('click' , (event) => {
         $revive2();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       })
       $('.button10').on('click' , (event) => {
         $attack3();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
         if($player.hull <= 0){
           $('h2').append($message5);
           $('.message5').delay(2000).fadeOut();
@@ -227,7 +227,7 @@ $('.button7').on('click' , (event) => {
       })
       $('.button11').on('click' , (event) => {
         $attack2();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
         if($cpu.hull <= 0){
           $upgrade.addClass('upgrade');
           $cpu.attack = $cpu.attack + 10;
@@ -246,8 +246,8 @@ $('.button7').on('click' , (event) => {
     $round2 = () => {
       $player.hull = 100;
       $cpu.hull = 100;
-      $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
-      $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+      $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
+      $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       console.log($cpu);
       $battleScreen.remove();
       $battleScreen2.remove();
@@ -261,7 +261,7 @@ $('.button7').on('click' , (event) => {
       $('h3').append($battleScreen2);
       $('.button5').on('click' , (event) => {
         $attack();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
         if($cpu.hull <= 0){
           $upgrade3.addClass('upgrade3')
           $('h2').append($upgrade3);
@@ -281,11 +281,11 @@ $('.button7').on('click' , (event) => {
       })
       $('.button6').on('click' , (event) => {
         $revive();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
       })
       $('.button3').on('click' , (event) => {
         $cpuAttack();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
         if($player.hull <= 0){
           $upgrade4.addClass('upgrade4');
           $('h2').append($upgrade4);
@@ -305,11 +305,11 @@ $('.button7').on('click' , (event) => {
       })
       $('.button4').on('click' , (event) => {
         $revive2();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       })
       $('.button10').on('click' , (event) => {
         $attack3();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
         if($player.hull <= 0){
           $('h2').append($message6);
           $('.message6').delay(2000).fadeOut();
@@ -319,7 +319,7 @@ $('.button7').on('click' , (event) => {
       })
       $('.button11').on('click' , (event) => {
         $attack2();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
         if($cpu.hull <= 0){
           $('h2').append($message6);
           $('.message6').delay(2000).fadeOut();
@@ -335,8 +335,8 @@ $('.button7').on('click' , (event) => {
     $round3 = () => {
       $player.hull = 100;
       $cpu.hull = 100;
-      $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
-      $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+      $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
+      $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       $battleScreen.remove();
       $battleScreen2.remove();
       $battleScreen.addClass('battleScreen');
@@ -349,7 +349,7 @@ $('.button7').on('click' , (event) => {
       $('h3').append($battleScreen2);
       $('.button5').on('click' , (event) => {
         $attack();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
         if($cpu.hull <= 0){
           $upgrade5.addClass('upgrade5');
           $('h2').append($upgrade5);
@@ -359,7 +359,7 @@ $('.button7').on('click' , (event) => {
           $('.button20').on('click' , (event) => {
           if ($player.wins === 3){
             $upgrade5.remove();
-            $message13.addClass('message13')
+            $message13.addClass('message13').text('AKUMA IS THE WINNER');
             $('h2').append($message13);
           } else {
             $player.attack = $player.attack + 10;
@@ -370,7 +370,7 @@ $('.button7').on('click' , (event) => {
           $('.button21').on('click' , (event) => {
             if ($player.wins === 3){
               $upgrade5.remove();
-              $message13.addClass('message13')
+              $message13.addClass('message13').text('AKUMA IS THE WINNER');
               $('h2').append($message13);
             } else {
             $upgrade5.remove();
@@ -381,11 +381,11 @@ $('.button7').on('click' , (event) => {
       })
       $('.button6').on('click' , (event) => {
         $revive();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
       })
       $('.button3').on('click' , (event) => {
         $cpuAttack();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
         if($player.hull <= 0){
           $upgrade6.addClass('upgrade6');
           $('h2').append($upgrade6);
@@ -395,7 +395,7 @@ $('.button7').on('click' , (event) => {
           $('.button22').on('click' , (event) => {
           if ($cpu.wins === 3){
             $upgrade6.remove();
-            $message14.addClass('message14')
+            $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
             $('h2').append($message14);
           } else {
             $cpu.attack = $cpu.attack + 10;
@@ -406,7 +406,7 @@ $('.button7').on('click' , (event) => {
           $('.button23').on('click' , (event) => {
             if ($cpu.wins === 3){
               $upgrade6.remove();
-              $message14.addClass('message14')
+              $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
               $('h2').append($message14);
             } else {
             $upgrade6.remove();
@@ -417,18 +417,18 @@ $('.button7').on('click' , (event) => {
       })
       $('.button4').on('click' , (event) => {
         $revive2();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       })
       $('.button10').on('click' , (event) => {
         $attack3();
-        $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+        $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
         if($player.hull <= 0){
           $('h2').append($message7);
           $('.message7').delay(2000).fadeOut();
           $cpu.wins ++;
           if ($cpu.wins === 3){
             $upgrade6.remove();
-            $message14.addClass('message14')
+            $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
             $('h2').append($message14);
           } else {
             $upgrade6.remove();
@@ -438,14 +438,14 @@ $('.button7').on('click' , (event) => {
       })
       $('.button11').on('click' , (event) => {
         $attack2();
-        $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+        $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
         if($cpu.hull <= 0){
           $('h2').append($message7);
           $('.message7').delay(2000).fadeOut();
           $player.wins ++;
           if ($player.wins === 3){
             $upgrade5.remove();
-            $message13.addClass('message13')
+            $message13.addClass('message13').text('AKUMA IS THE WINNER');
             $('h2').append($message13);
           } else {
             $round4();
@@ -461,8 +461,8 @@ $('.button7').on('click' , (event) => {
         $round4 = () => {
           $player.hull = 100;
           $cpu.hull = 100;
-          $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
-          $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+          $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
+          $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
           $battleScreen.remove();
           $battleScreen2.remove();
           $battleScreen.addClass('battleScreen');
@@ -475,7 +475,7 @@ $('.button7').on('click' , (event) => {
           $('h3').append($battleScreen2);
           $('.button5').on('click' , (event) => {
             $attack();
-            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
             if($cpu.hull <= 0){
               $player.wins ++;
               $suddenDeath.addClass('suddenDeath');
@@ -489,7 +489,7 @@ $('.button7').on('click' , (event) => {
               $('.button24').on('click' , (event) => {
               if ($player.wins === 3){
                 $upgrade7.remove();
-                $message13.addClass('message13')
+                $message13.addClass('message13').text('AKUMA IS THE WINNER');
                 $('h2').append($message13);
               } else {
                 $player.attack = $player.attack + 10;
@@ -500,7 +500,7 @@ $('.button7').on('click' , (event) => {
             $('.button25').on('click' , (event) => {
               if ($player.wins === 3){
                 $upgrade7.remove();
-                $message13.addClass('message13')
+                $message13.addClass('message13').text('AKUMA IS THE WINNER');
                 $('h2').append($message13);
               } else {
               $upgrade7.remove();
@@ -517,11 +517,11 @@ $('.button7').on('click' , (event) => {
           })
           $('.button6').on('click' , (event) => {
             $revive();
-            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+            $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
           })
           $('.button3').on('click' , (event) => {
             $cpuAttack();
-            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+            $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
             if($player.hull <= 0){
               $cpu.wins ++;
               $('h2').append($message8);
@@ -535,7 +535,7 @@ $('.button7').on('click' , (event) => {
               $('.button26').on('click' , (event) => {
               if ($cpu.wins === 3){
                 $upgrade8.remove();
-                $message14.addClass('message14')
+                $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
                 $('h2').append($message14);
               } else {
                 $cpu.attack = $cpu.attack + 10;
@@ -546,7 +546,7 @@ $('.button7').on('click' , (event) => {
               $('.button27').on('click' , (event) => {
                 if ($cpu.wins === 3){
                   $upgrade8.remove();
-                  $message14.addClass('message14')
+                  $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
                   $('h2').append($message14);
                 } else {
                 $upgrade8.remove();
@@ -558,11 +558,11 @@ $('.button7').on('click' , (event) => {
           })
           $('.button4').on('click' , (event) => {
             $revive2();
-            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
           })
           $('.button10').on('click' , (event) => {
             $attack3();
-            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+            $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
             if($player.hull <= 0){
               $('h2').append($message8);
               $('.message8').delay(2000).fadeOut();
@@ -573,7 +573,7 @@ $('.button7').on('click' , (event) => {
               $suddenDeath.remove();
               if ($cpu.wins === 3){
                 $upgrade8.remove();
-                $message14.addClass('message14')
+                $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
                 $('h2').append($message14);
               } else {
                 $round5();
@@ -584,7 +584,7 @@ $('.button7').on('click' , (event) => {
           })
           $('.button11').on('click' , (event) => {
             $attack2();
-            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
             if($cpu.hull <= 0){
               $('h2').append($message8);
               $('.message8').delay(2000).fadeOut();
@@ -597,7 +597,7 @@ $('.button7').on('click' , (event) => {
               $player.wins ++;
               if ($player.wins === 3){
                 $upgrade7.remove();
-                $message13.addClass('message13')
+                $message13.addClass('message13').text('AKUMA IS THE WINNER');
                 $('h2').append($message13);
               } else {
                 $round5();
@@ -611,8 +611,8 @@ $('.button7').on('click' , (event) => {
         $round5 = () => {
           $player.hull = 100;
           $cpu.hull = 100;
-          $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
-          $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+          $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
+          $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
           $battleScreen.remove();
           $battleScreen2.remove();
           $battleScreen.addClass('battleScreen');
@@ -625,7 +625,7 @@ $('.button7').on('click' , (event) => {
           $('h3').append($battleScreen2);
           $('.button5').on('click' , (event) => {
             $attack();
-            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
             if($cpu.hull <= 0){
               $player.wins ++;
               $('.message11').delay(2000).fadeOut();
@@ -634,7 +634,7 @@ $('.button7').on('click' , (event) => {
               $('.button28').on('click' , (event) => {
               if ($player.wins === 3){
                 $upgrade9.remove();
-                $message13.addClass('message13')
+                $message13.addClass('message13').text('AKUMA IS THE WINNER');
                 $('h2').append($message13);
               } else {
                 $player.attack = $player.attack + 10;
@@ -646,7 +646,7 @@ $('.button7').on('click' , (event) => {
             $('.button29').on('click' , (event) => {
               if ($player.wins === 3){
                 $upgrade9.remove();
-                $message13.addClass('message13')
+                $message13.addClass('message13').text('AKUMA IS THE WINNER');
                 $('h2').append($message13);
               } else {
               $upgrade9.remove();
@@ -657,11 +657,11 @@ $('.button7').on('click' , (event) => {
           // }
           $('.button6').on('click' , (event) => {
             $revive();
-            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+            $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
           })
           $('.button3').on('click' , (event) => {
             $cpuAttack();
-            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+            $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
             if($player.hull <= 0){
               $cpu.wins++
               $('h2').append($message11);
@@ -672,12 +672,12 @@ $('.button7').on('click' , (event) => {
               // $('.message11').delay(2000).fadeOut();
               if ($cpu.wins === 3){
                 $upgrade10.remove();
-                $message14.addClass('message14')
+                $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
                 $('h2').append($message14);
                 $('.button30').on('click' , (event) => {
                 if ($cpu.wins === 3){
                   $upgrade10.remove();
-                  $message14.addClass('message14')
+                  $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
                   $('h2').append($message14);
               } else {
                 console.log('ajkas');
@@ -688,18 +688,18 @@ $('.button7').on('click' , (event) => {
       })
           $('.button4').on('click' , (event) => {
             $revive2();
-            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
           })
           $('.button10').on('click' , (event) => {
             $attack3();
-            $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
+            $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
             if($player.hull <= 0){
               $('h2').append($message11);
               $('.message7').delay(2000).fadeOut();
               $cpu.wins ++;
               if ($cpu.wins === 3){
                 $upgrade10.remove();
-                $message14.addClass('message14')
+                $message14.addClass('message14').text('ZANGIEF IS THE WINNER');
                 $('h2').append($message14);
               } else {
                 console.log('sfna');;
@@ -709,14 +709,14 @@ $('.button7').on('click' , (event) => {
 
           $('.button11').on('click' , (event) => {
             $attack2();
-            $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
             if($cpu.hull <= 0){
               $player.wins++
               $('h2').append($message11)
               $('.message11').delay(2000).fadeOut();
             if($player.wins === 3){
               $upgrade10.remove();
-              $message13.addClass('message13')
+              $message13.addClass('message13').text('AKUMA IS THE WINNER');
               $('h2').append($message13);
             }
             }
