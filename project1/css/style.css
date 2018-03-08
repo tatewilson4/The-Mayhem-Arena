@@ -199,3 +199,11 @@ div.name2{
   font-size: 75px;
   z-index: 1;
 }
+.button12, .button13, .button14, .button15, .button16, .button17, .button18, .button19, .button20, .button21, .button22, .button23, .button24, .button25, .button26, .button27, .button28 {
+  font-size: 40px;
+  border-radius: 10px;
+  border: rgb(77, 0, 251);
+  background: rgb(77, 0, 251);
+  color: white;
+  text-align: center;
+}

@@ -44,6 +44,9 @@ $(()=>{
   $revive2 = () => {
     $cpu.hull = $cpu.hull + 50;
   }
+  // $playerUpgrade = () => {
+  //
+  // }
 
 
 
@@ -61,6 +64,15 @@ $(()=>{
   let $battleScreen = $('<div><button class="button3">ATTACK</button><button class="button4">REVIVE POTION</button><button class="button10">CRITICAL HIT</button></div>');
   let $battleScreen2 = $('<div><button class="button5">ATTACK</button><button class="button6">REVIVE POTION</button><button class="button11">CRITICAL HIT</button></div>');
   let $suddenDeath = $('<div><button class="button8">CONTINUE</button><button class="button9">GIVE UP</button></div>');
+  let $upgrade = $('<div><button class="button12">UPGRADE</button><button class="button13">PASS</button></div>');
+  let $upgrade2 = $('<div><button class="button14">UPGRADE</button><button class="button15">PASS</button></div>');
+  let $upgrade3 = $('<div><button class="button16">UPGRADE</button><button class="button17">PASS</button></div>');
+  let $upgrade4 = $('<div><button class="button18">UPGRADE</button><button class="button19">PASS</button></div>');
+  let $upgrade5 = $('<div><button class="button20">UPGRADE</button><button class="button21">PASS</button></div>');
+  let $upgrade6 = $('<div><button class="button22">UPGRADE</button><button class="button23">PASS</button></div>');
+  let $upgrade7 = $('<div><button class="button24">UPGRADE</button><button class="button25">PASS</button></div>');
+  let $upgrade8 = $('<div><button class="button26">UPGRADE</button><button class="button27">PASS</button></div>');
+  let $upgrade9 = $('<div><button class="button28">UPGRADE</button><button class="button29">PASS</button></div>');
   let $message = $('<div>');
   let $message2 = $('<div>');
   let $message3 = $('<div>');
@@ -153,10 +165,20 @@ $('.button7').on('click' , (event) => {
         $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
         // console.log($cpu);
         if($cpu.hull <= 0){
+          $upgrade2.addClass('upgrade2');
+          $('h2').append($upgrade2);
           $('h2').append($message5);
           $('.message5').delay(2000).fadeOut();
           $player.wins ++;
+          $('.button14').on('click' , (event) => {
+          $player.attack = $player.attack + 10;
+          $upgrade2.remove();
           $round2();
+          })
+          $('.button15').on('click' , (event) => {
+            $upgrade2.remove();
+            $round2();
+          })
         }
       })
       $('.button6').on('click' , (event) => {
@@ -167,12 +189,22 @@ $('.button7').on('click' , (event) => {
         $cpuAttack();
         $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
         if($player.hull <= 0){
+          $upgrade.addClass('upgrade');
+          $('h2').append($upgrade);
           $('h2').append($message5);
           $('.message5').delay(2000).fadeOut();
           $cpu.wins ++;
+          $('.button12').on('click' , (event) => {
+          $cpu.attack = $cpu.attack + 10;
+          $upgrade.remove();
           $round2();
-        }
-      })
+        })
+        $('.button13').on('click' , (event) => {
+          $upgrade.remove();
+          $round2();
+        })
+      }
+    })
       $('.button4').on('click' , (event) => {
         $revive2();
         $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
@@ -191,6 +223,9 @@ $('.button7').on('click' , (event) => {
         $attack2();
         $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
         if($cpu.hull <= 0){
+          $upgrade.addClass('upgrade');
+          $cpu.attack = $cpu.attack + 10;
+          $('h2').append($upgrade);
           $('h2').append($message5);
           $('.message5').delay(2000).fadeOut();
           $player.wins ++;
@@ -221,12 +256,21 @@ $('.button7').on('click' , (event) => {
       $('.button5').on('click' , (event) => {
         $attack();
         $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
-        console.log($cpu);
         if($cpu.hull <= 0){
+          $upgrade3.addClass('upgrade3')
+          $('h2').append($upgrade3);
           $('h2').append($message6);
           $('.message6').delay(2000).fadeOut();
           $player.wins ++;
+          $('.button16').on('click' , (event) => {
+          $player.attack = $player.attack + 10;
+          $upgrade3.remove();
           $round3();
+          })
+          $('.button17').on('click' , (event) => {
+            $upgrade3.remove();
+            $round3();
+          })
         }
       })
       $('.button6').on('click' , (event) => {
@@ -237,10 +281,20 @@ $('.button7').on('click' , (event) => {
         $cpuAttack();
         $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
         if($player.hull <= 0){
+          $upgrade4.addClass('upgrade4');
+          $('h2').append($upgrade4);
           $('h2').append($message6);
           $('.message6').delay(2000).fadeOut();
           $cpu.wins ++;
+          $('.button18').on('click' , (event) => {
+          $cpu.attack = $cpu.attack + 10;
+          $upgrade4.remove();
           $round3();
+          })
+          $('.button19').on('click' , (event) => {
+            $upgrade4.remove();
+            $round3();
+          })
         }
       })
       $('.button4').on('click' , (event) => {
@@ -290,16 +344,25 @@ $('.button7').on('click' , (event) => {
       $('.button5').on('click' , (event) => {
         $attack();
         $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
-        console.log($cpu);
         if($cpu.hull <= 0){
+          $upgrade5.addClass('upgrade5');
+          $('h2').append($upgrade5);
           $('h2').append($message7);
-          $('.message7').delay(2000).fadeOut();
           $player.wins ++;
+          $('.message7').delay(2000).fadeOut();
+          $('.button20').on('click' , (event) => {
           if ($player.wins === 3){
             playerWin();
           } else {
+            $player.attack = $player.attack + 10;
+            $upgrade5.remove();
             $round4();
           }
+          })
+          $('.button21').on('click' , (event) => {
+            $upgrade5.remove();
+            $round4();
+        });
         }
       })
       $('.button6').on('click' , (event) => {
@@ -310,14 +373,24 @@ $('.button7').on('click' , (event) => {
         $cpuAttack();
         $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
         if($player.hull <= 0){
+          $upgrade6.addClass('upgrade6');
+          $('h2').append($upgrade6);
           $('h2').append($message7);
           $('.message7').delay(2000).fadeOut();
           $cpu.wins ++;
+          $('.button22').on('click' , (event) => {
           if ($cpu.wins === 3){
             cpuWin();
           } else {
+            $cpu.attack = $cpu.attack + 10;
+            $upgrade6.remove();
             $round4();
           }
+          })
+          $('.button23').on('click' , (event) => {
+            $upgrade6.remove();
+            $round4();
+          })
         }
       })
       $('.button4').on('click' , (event) => {
@@ -376,22 +449,30 @@ $('.button7').on('click' , (event) => {
           $('.button5').on('click' , (event) => {
             $attack();
             $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
-            console.log($cpu);
             if($cpu.hull <= 0){
-              $('h2').append($message8);
-              $('.message8').delay(2000).fadeOut();
+              $cpu.wins ++;
               $suddenDeath.addClass('suddenDeath');
               $('h2').append($suddenDeath);
-              $('.button8').on('click' , (event) => {
-              $cpu.wins ++;
-              $suddenDeath.remove();
+              $('h2').append($message8);
               $('.message8').delay(2000).fadeOut();
+              $('.button8').on('click' , (event) => {
+              $upgrade7.addClass('upgrade7')
+              $('h2').append($upgrade7);
+              $suddenDeath.remove();
+              $('.button24').on('click' , (event) => {
               $player.wins ++;
               if ($player.wins === 3){
                 playerWin();
               } else {
+                $player.attack = $player.attack + 10;
+                $upgrade7.remove();
                 $round5();
               }
+            })
+            $('.button25').on('click' , (event) => {
+              $upgrade7.remove();
+              $round5();
+            })
             })
           }
             $('.button9').on('click' , (event) => {
@@ -408,18 +489,28 @@ $('.button7').on('click' , (event) => {
             $cpuAttack();
             $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
             if($player.hull <= 0){
+              $cpu.wins ++;
               $('h2').append($message8);
               $('.message8').delay(2000).fadeOut();
               $suddenDeath.addClass('suddenDeath');
               $('h2').append($suddenDeath);
               $('.button8').on('click' , (event) => {
-              $cpu.wins ++;
+              $upgrade8.addClass('upgrade8');
+              $('h2').append($upgrade8);
               $suddenDeath.remove();
+              $('.button26').on('click' , (event) => {
               if ($cpu.wins === 3){
                 cpuWin();
               } else {
+                $cpu.attack = $cpu.attack + 10;
+                $upgrade8.remove();
                 $round5();
               }
+              })
+              $('.button27').on('click' , (event) => {
+                $upgrade8.remove();
+                $round5();
+              })
             })
             }
           })
