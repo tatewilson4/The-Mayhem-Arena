@@ -37,7 +37,7 @@ h1 {
   font-size: 40px;
   border-radius: 10px;
   border: rgb(77, 0, 251);
-  background: rgb(77, 0, 251);
+  background: rgba(77, 0, 251, .5);
   color: white;
   text-align: center;
 }
@@ -48,7 +48,7 @@ h1 {
   display: inline;
   font-size: 20px;
   border-radius: 10px;
-  background: blue;
+  background: rgba(77, 0, 251, .5);
   color: white;
   margin: 10px 0;
   left: 152px;
@@ -56,11 +56,11 @@ h1 {
 .button7 {
   position: relative;
   bottom: -50px;
-  left: 725px;
+  left: 895px;
   display: inline;
   font-size: 20px;
   border-radius: 10px;
-  background: blue;
+  background: rgba(251, 0, 71, .7);
   color: white;
   margin: 10px 0;
 }
@@ -68,27 +68,31 @@ h1 {
 .button3, .button4, .button10{
   font-size: 20px;
   border-radius: 10px;
-  background: blue;
+  background: rgba(77, 0, 251, .7);
   color: white;
   display: grid;
   margin: 10px 0;
   display: flex;
   position: relative;
-  bottom: -95px;
-  right:134px;
+  bottom: -142px;
+  right:289px;
+  height: 22%;
+  width: 100%;
 }
 
 .button5, .button6, .button11 {
   font-size: 20px;
   border-radius: 10px;
-  background: blue;
+  background: rgba(77, 0, 251, .7);
   color: white;
   display: grid;
   margin: 10px 0;
   display: flex;
   position: relative;
-  bottom: 90px;
-  left:134px;
+  bottom: 44px;
+  left:-3%;
+  height: 22%;
+  width: 100%;
 }
 
 .battleScreen {
@@ -110,6 +114,7 @@ h1 {
   border-radius: 10px;
   float: right;
   border: none;
+
 }
 
 .image4{
@@ -143,8 +148,8 @@ h1 {
   display: inline-block;
   height: 80px;
   width: 40%;
-  bottom: -220px;
-  right: -453px;
+  bottom: -240px;
+  right: -400px;
   font-size: 20px;
   text-align: center;
   border-radius: 10px;
@@ -158,8 +163,8 @@ h1 {
   display: inline-block;
   height: 80px;
   width: 40%;
-  bottom: -140px;
-  left: -120px;
+  bottom: -160px;
+  left: -290px;
   font-size: 20px;
   text-align: center;
   border-radius: 10px;
@@ -186,7 +191,7 @@ div.name2{
   right: 113px;
   font-weight: bold;
   font-size: 30px;
-  top: -155px;
+  bottom: 116px;
   right: -183px;
 }
 
@@ -214,13 +219,13 @@ div.name2{
   font-size: 40px;
   border-radius: 10px;
   border: rgb(77, 0, 251);
-  background: rgb(77, 0, 251);
+  background: rgba(77, 0, 251, .5);
   color: white;
   text-align: center;
 }
 
 .message13, .message14 {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(77, 0, 251, .5);
   height: 400px;
   width: 1200px;
   z-index: 8;
