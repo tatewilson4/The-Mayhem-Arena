@@ -4,8 +4,8 @@ $(()=>{
   class $Fighter{
     constructor(hull, attack, defend, wins, attack2){
       this.hull = 100;
-      this.attack = 50;
-      this.defend = 50;
+      this.attack = 20;
+      this.defend = 30;
       this.wins = 0;
       this.attack2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
@@ -14,8 +14,8 @@ $(()=>{
   class $Cpu {
     constructor(hull, attack, defend, wins, attack2){
       this.hull = 100;
-      this.attack = 50;
-      this.defend = 50;
+      this.attack = 20;
+      this.defend = 30;
       this.wins = 0;
       this.attack2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
@@ -30,19 +30,19 @@ $(()=>{
   }
   $attack2 = () => {
     if(($player.attack2[Math.floor(Math.random()*$player.attack2.length)]) >= 8){
-      $cpu.hull = $cpu.hull - 50;
+      $cpu.hull = $cpu.hull - 40;
       }
   }
   $attack3 = () => {
     if(($cpu.attack2[Math.floor(Math.random()*$cpu.attack2.length)]) >= 8){
-      $player.hull = $player.hull - 50;
+      $player.hull = $player.hull - 40;
       }
   }
   $revive = () => {
-    $player.hull = $player.hull + 50;
+    $player.hull = $player.hull + 30;
   }
   $revive2 = () => {
-    $cpu.hull = $cpu.hull + 50;
+    $cpu.hull = $cpu.hull + 30;
   }
   // $playerUpgrade = () => {
   //

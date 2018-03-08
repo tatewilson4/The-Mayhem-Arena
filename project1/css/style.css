@@ -21,6 +21,9 @@ h1 {
   display: grid;
   text-align: center;
 }
+h2 {
+  display: inline;
+}
 
 .instructions{
   border: 1px solid rgba(13, 218, 255, .75);
@@ -118,7 +121,7 @@ h1 {
 }
 
 .image4{
-  display: inline-block;
+  display: inline;
   /* content: url(/Users/tatewilson/Documents/homework/the-mayhem-arena/project1/url/zangief.gif);
   height: 200px;
   width: 152px; */
@@ -126,11 +129,11 @@ h1 {
   float: left;
   padding-left: 140px;
   padding-top: 25px;
-  z-index: -100;
+  z-index: -1;
 }
 
 .image3{
-  display: inline-block;
+  display: inline;
   /* content: url(http://www.fightersgeneration.com/np5/char/ssf2hd/akuma-hdstance.gif);
   height: 220px;
   width: 152px; */
@@ -138,7 +141,7 @@ h1 {
   margin: auto;
   float: right;
   top: 200px;
-  z-index: -100;
+  z-index: -1;
 }
 .stats {
   background: rgba(0, 0, 0, .7);
