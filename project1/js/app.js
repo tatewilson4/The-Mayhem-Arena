@@ -53,6 +53,8 @@ $(()=>{
 
 
 
+
+
   //Create a clickable start button
   let $divStart = $('<div><button class="button">START</button></div>');
   let $instructions = $('<div>')
@@ -73,6 +75,7 @@ $(()=>{
   let $upgrade7 = $('<div><button class="button24">UPGRADE</button><button class="button25">PASS</button></div>');
   let $upgrade8 = $('<div><button class="button26">UPGRADE</button><button class="button27">PASS</button></div>');
   let $upgrade9 = $('<div><button class="button28">UPGRADE</button><button class="button29">PASS</button></div>');
+  let $upgrade10 = $('<div><button class="button30">UPGRADE</button><button class="button31">PASS</button></div>');
   let $message = $('<div>');
   let $message2 = $('<div>');
   let $message3 = $('<div>');
@@ -85,6 +88,8 @@ $(()=>{
   let $message10 = $('<div>');
   let $message11 = $('<div>');
   let $message12 = $('<div>');
+  let $message13 = $('<div>');
+  let $message14 = $('<div>');
   // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
   // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
 
@@ -101,6 +106,7 @@ $(()=>{
   $('.name2').hide();
   $('.stats').hide();
   $('.stats2').hide();
+
 
 
 //remove click button
@@ -352,7 +358,9 @@ $('.button7').on('click' , (event) => {
           $('.message7').delay(2000).fadeOut();
           $('.button20').on('click' , (event) => {
           if ($player.wins === 3){
-            playerWin();
+            $upgrade5.remove();
+            $message13.addClass('message13')
+            $('h2').append($message13);
           } else {
             $player.attack = $player.attack + 10;
             $upgrade5.remove();
@@ -360,8 +368,14 @@ $('.button7').on('click' , (event) => {
           }
           })
           $('.button21').on('click' , (event) => {
+            if ($player.wins === 3){
+              $upgrade5.remove();
+              $message13.addClass('message13')
+              $('h2').append($message13);
+            } else {
             $upgrade5.remove();
             $round4();
+          }
         });
         }
       })
@@ -380,7 +394,9 @@ $('.button7').on('click' , (event) => {
           $cpu.wins ++;
           $('.button22').on('click' , (event) => {
           if ($cpu.wins === 3){
-            cpuWin();
+            $upgrade6.remove();
+            $message14.addClass('message14')
+            $('h2').append($message14);
           } else {
             $cpu.attack = $cpu.attack + 10;
             $upgrade6.remove();
@@ -388,8 +404,14 @@ $('.button7').on('click' , (event) => {
           }
           })
           $('.button23').on('click' , (event) => {
+            if ($cpu.wins === 3){
+              $upgrade6.remove();
+              $message14.addClass('message14')
+              $('h2').append($message14);
+            } else {
             $upgrade6.remove();
             $round4();
+          }
           })
         }
       })
@@ -405,8 +427,11 @@ $('.button7').on('click' , (event) => {
           $('.message7').delay(2000).fadeOut();
           $cpu.wins ++;
           if ($cpu.wins === 3){
-            cpuWin();
+            $upgrade6.remove();
+            $message14.addClass('message14')
+            $('h2').append($message14);
           } else {
+            $upgrade6.remove();
             $round4();
           }
         }
@@ -419,7 +444,9 @@ $('.button7').on('click' , (event) => {
           $('.message7').delay(2000).fadeOut();
           $player.wins ++;
           if ($player.wins === 3){
-            playerWin();
+            $upgrade5.remove();
+            $message13.addClass('message13')
+            $('h2').append($message13);
           } else {
             $round4();
           }
@@ -450,7 +477,7 @@ $('.button7').on('click' , (event) => {
             $attack();
             $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
             if($cpu.hull <= 0){
-              $cpu.wins ++;
+              $player.wins ++;
               $suddenDeath.addClass('suddenDeath');
               $('h2').append($suddenDeath);
               $('h2').append($message8);
@@ -460,9 +487,10 @@ $('.button7').on('click' , (event) => {
               $('h2').append($upgrade7);
               $suddenDeath.remove();
               $('.button24').on('click' , (event) => {
-              $player.wins ++;
               if ($player.wins === 3){
-                playerWin();
+                $upgrade7.remove();
+                $message13.addClass('message13')
+                $('h2').append($message13);
               } else {
                 $player.attack = $player.attack + 10;
                 $upgrade7.remove();
@@ -470,13 +498,19 @@ $('.button7').on('click' , (event) => {
               }
             })
             $('.button25').on('click' , (event) => {
+              if ($player.wins === 3){
+                $upgrade7.remove();
+                $message13.addClass('message13')
+                $('h2').append($message13);
+              } else {
               $upgrade7.remove();
               $round5();
+            }
             })
             })
           }
             $('.button9').on('click' , (event) => {
-              console.log('kjasb');
+              $('h2').append('.button9')
               // $start();
             })
 
@@ -500,7 +534,9 @@ $('.button7').on('click' , (event) => {
               $suddenDeath.remove();
               $('.button26').on('click' , (event) => {
               if ($cpu.wins === 3){
-                cpuWin();
+                $upgrade8.remove();
+                $message14.addClass('message14')
+                $('h2').append($message14);
               } else {
                 $cpu.attack = $cpu.attack + 10;
                 $upgrade8.remove();
@@ -508,8 +544,14 @@ $('.button7').on('click' , (event) => {
               }
               })
               $('.button27').on('click' , (event) => {
+                if ($cpu.wins === 3){
+                  $upgrade8.remove();
+                  $message14.addClass('message14')
+                  $('h2').append($message14);
+                } else {
                 $upgrade8.remove();
                 $round5();
+              }
               })
             })
             }
@@ -530,7 +572,9 @@ $('.button7').on('click' , (event) => {
               $cpu.wins ++;
               $suddenDeath.remove();
               if ($cpu.wins === 3){
-                cpuWin();
+                $upgrade8.remove();
+                $message14.addClass('message14')
+                $('h2').append($message14);
               } else {
                 $round5();
               }
@@ -552,7 +596,9 @@ $('.button7').on('click' , (event) => {
               $('.message8').delay(2000).fadeOut();
               $player.wins ++;
               if ($player.wins === 3){
-                playerWin();
+                $upgrade7.remove();
+                $message13.addClass('message13')
+                $('h2').append($message13);
               } else {
                 $round5();
               }
@@ -560,9 +606,6 @@ $('.button7').on('click' , (event) => {
           }
           })
         }
-
-
-
 
 
         $round5 = () => {
@@ -583,20 +626,35 @@ $('.button7').on('click' , (event) => {
           $('.button5').on('click' , (event) => {
             $attack();
             $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
-            console.log($cpu);
-            // if($cpu.hull <= 0){
-            //   $suddenDeath.addClass('sudddenDeath');
-            //   $('h2').append($suddenDeath);
-            //   $('h2').append($message11);
-            //   $('.message11').delay(2000).fadeOut();
-            //   $player.wins ++;
-            //   if ($player.wins === 3){
-            //     playerWin();
-            //   } else {
-            //     $round5();
-            //   }
-            // }
-          })
+            if($cpu.hull <= 0){
+              $player.wins ++;
+              $('.message11').delay(2000).fadeOut();
+              $upgrade9.addClass('upgrade9')
+              $('h2').append($upgrade9);
+              $('.button28').on('click' , (event) => {
+              if ($player.wins === 3){
+                $upgrade9.remove();
+                $message13.addClass('message13')
+                $('h2').append($message13);
+              } else {
+                $player.attack = $player.attack + 10;
+                $upgrade9.remove();
+              }
+            })
+          }
+            })
+            $('.button29').on('click' , (event) => {
+              if ($player.wins === 3){
+                $upgrade9.remove();
+                $message13.addClass('message13')
+                $('h2').append($message13);
+              } else {
+              $upgrade9.remove();
+            }
+            })
+
+          //   }
+          // }
           $('.button6').on('click' , (event) => {
             $revive();
             $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
@@ -605,16 +663,29 @@ $('.button7').on('click' , (event) => {
             $cpuAttack();
             $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
             if($player.hull <= 0){
+              $cpu.wins++
               $('h2').append($message11);
               $('.message11').delay(2000).fadeOut();
-              $cpu.wins ++;
+              $upgrade10.addClass('upgrade10');
+              $('h2').append($upgrade10);
+              // $('h2').append($message11);
+              // $('.message11').delay(2000).fadeOut();
               if ($cpu.wins === 3){
-                cpuWin();
+                $upgrade10.remove();
+                $message14.addClass('message14')
+                $('h2').append($message14);
+                $('.button30').on('click' , (event) => {
+                if ($cpu.wins === 3){
+                  $upgrade10.remove();
+                  $message14.addClass('message14')
+                  $('h2').append($message14);
               } else {
-                $round5();
+                console.log('ajkas');
               }
-            }
-          })
+            })
+          }
+        }
+      })
           $('.button4').on('click' , (event) => {
             $revive2();
             $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
@@ -623,22 +694,35 @@ $('.button7').on('click' , (event) => {
             $attack3();
             $('.stats').html('Health: ' + $player.hull + '</br>Attack: ' + $player.attack + '</br>Defend: ' + $player.defend + '</br>Rounds Won: ' + $player.wins);
             if($player.hull <= 0){
-              $('h2').append($message7);
+              $('h2').append($message11);
               $('.message7').delay(2000).fadeOut();
               $cpu.wins ++;
               if ($cpu.wins === 3){
-                cpuWin();
+                $upgrade10.remove();
+                $message14.addClass('message14')
+                $('h2').append($message14);
               } else {
-                $round4();
+                console.log('sfna');;
               }
             }
           })
+
           $('.button11').on('click' , (event) => {
             $attack2();
             $('.stats2').html('Health: ' + $cpu.hull + '</br>Attack: ' + $cpu.attack + '</br>Defend: ' + $cpu.defend + '</br>Rounds Won: ' + $cpu.wins);
+            if($cpu.hull <= 0){
+              $player.wins++
+              $('h2').append($message11)
+              $('.message11').delay(2000).fadeOut();
+            if($player.wins === 3){
+              $upgrade10.remove();
+              $message13.addClass('message13')
+              $('h2').append($message13);
+            }
+            }
           })
-        }
 
+}
 
 
 

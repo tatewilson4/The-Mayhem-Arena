@@ -194,16 +194,25 @@ div.name2{
     position: absolute;
     z-index: 1;
 }
-.message5, .message6, .message7, .message8, .message9, .message10, .message11, .message12 {
+.message5, .message6, .message7, .message8, .message9, .message10, .message11, .message12{
   font-family: "Permanent Marker";
   font-size: 75px;
   z-index: 1;
 }
-.button12, .button13, .button14, .button15, .button16, .button17, .button18, .button19, .button20, .button21, .button22, .button23, .button24, .button25, .button26, .button27, .button28 {
+.button12, .button13, .button14, .button15, .button16, .button17, .button18, .button19, .button20, .button21, .button22, .button23, .button24, .button25, .button26, .button27, .button28, .button29, .button30, .button31 {
   font-size: 40px;
   border-radius: 10px;
   border: rgb(77, 0, 251);
   background: rgb(77, 0, 251);
   color: white;
   text-align: center;
+}
+
+.message13, .message14 {
+  background: rgba(0, 0, 0, .5);
+  height: 400px;
+  width: 1200px;
+  z-index: 8;
+  border-radius: 10px;
+
 }
