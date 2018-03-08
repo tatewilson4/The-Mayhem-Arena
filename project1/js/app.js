@@ -704,7 +704,7 @@ $('.button7').on('click' , (event) => {
           })
 
 }
-//somet
+
 //player and cpu win scenerio
 const playerWin = () => {
   console.log('You win');
