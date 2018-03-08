@@ -44,9 +44,7 @@ $(()=>{
   $revive2 = () => {
     $cpu.hull = $cpu.hull + 30;
   }
-  // $playerUpgrade = () => {
-  //
-  // }
+
 
 
 
@@ -90,8 +88,6 @@ $(()=>{
   let $message12 = $('<div>');
   let $message13 = $('<div>');
   let $message14 = $('<div>');
-  // let $battleScreen3 = $('<div><button class="button7">ATTACK</button><button class="button8">DEFEND</button></div>');
-  // let $battleScreen4 = $('<div><button class="button9">ATTACK</button><button class="button10">DEFEND</button></div>');
 
   $divStart.addClass('start');
   $message9.addClass('message9').text('You chose Zangeif');
@@ -124,8 +120,6 @@ $(()=>{
     $('.name2').show();
     $('.image').show();
     $('.image2').show();
-    // $fighter2.addClass('fighter2')
-    // $('h2').append($fighter2);
 
 $('.button2').on('click' , (event) => {
   $('h2').append($message9);
@@ -140,11 +134,6 @@ $('.button7').on('click' , (event) => {
 
 
 
-
-
-
-
-
     $round = () => {
       $($fighter).remove();
       $($fighter2).remove();
@@ -156,15 +145,14 @@ $('.button7').on('click' , (event) => {
       $('.message').delay(2000).fadeOut();
       // $battleScreen2.addClass('battleScreen2');
       //added alert for round 1
-      // $('.image').show();
-      // $('.image2').show();
+
       $('.name').hide();
       $('.name2').hide();
       $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
       $('.stats2').show().html('Health:   ' + $cpu.hull + ' //Attack:   ' + $cpu.attack + '  //Revival Potion ' + $cpu.defend + '</br>//Rounds Won: ' + $cpu.wins);
       $('h3').append($battleScreen);
       $('h3').append($battleScreen2);
-      // $('h2').append($battleScreen2);
+
       //attack and defend buttons for cpu and player1
       $('.button5').on('click' , (event) => {
         $attack();
@@ -239,7 +227,6 @@ $('.button7').on('click' , (event) => {
         }
       })
     };
-
 
 
     //Round 2
@@ -328,8 +315,6 @@ $('.button7').on('click' , (event) => {
         }
       })
     }
-
-
 
 //round 3
     $round3 = () => {
@@ -453,9 +438,6 @@ $('.button7').on('click' , (event) => {
         }
       })
     }
-
-
-
 
     //round 4
         $round4 = () => {
@@ -653,8 +635,7 @@ $('.button7').on('click' , (event) => {
             }
             })
 
-          //   }
-          // }
+
           $('.button6').on('click' , (event) => {
             $revive();
             $('.stats').show().html('Health:   ' + $player.hull + ' //Attack: ' + $player.attack + ' //Revival Potion:   ' + $player.defend + '</br>//Rounds Won:   ' + $player.wins);
@@ -724,9 +705,6 @@ $('.button7').on('click' , (event) => {
 
 }
 
-
-
-
 //player and cpu win scenerio
 const playerWin = () => {
   console.log('You win');
@@ -736,23 +714,6 @@ const cpuWin = () => {
 }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //creat a variable for cpu and fighter
 
